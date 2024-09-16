@@ -1,7 +1,7 @@
 import { Box, Button, Container, Heading, Input, useColorModeValue, useToast, VStack } from "@chakra-ui/react";
 import { useState } from "react";
-import axios from "axios"; // for backend connection
-import { useNavigate } from "react-router-dom"; // for navigation
+import axios from "axios"; 
+import { useNavigate } from "react-router-dom"; 
 
 const LoginPage = () => {
 	const [credentials, setCredentials] = useState({
@@ -9,13 +9,12 @@ const LoginPage = () => {
 		password: "",
 	});
 	const toast = useToast();
-	const navigate = useNavigate(); // Initialize the navigation hook
+	const navigate = useNavigate(); 
 
 	const handleLogin = async () => {
 		try {
-			const response = await axios.post('/api/auth/login', credentials); // Adjusted to match your backend route
-			const { success, message, token } = response.data; // Expecting a token in the response
-
+			const response = await axios.post('/api/auth/login', credentials); 
+			const { success, message, token } = response.data; 
 			if (!success) {
 				toast({
 					title: "Error",
@@ -31,10 +30,10 @@ const LoginPage = () => {
 					isClosable: true,
 				});
 				
-				// Save token to localStorage
+				
 				localStorage.setItem('authToken', token);
 				
-				// Redirect to homepage after successful login
+				
 				navigate('/');
 			}
 		} catch (error) {
