@@ -27,7 +27,7 @@ Check out the live demo of the application: [https://ecom-8ix0.onrender.com](htt
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ecom.git
+   git clone https://github.com/ajay-cs-tech/ecom.git
    cd ecom
    ```
 
